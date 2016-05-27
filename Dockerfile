@@ -22,3 +22,7 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN npm install -g npm@3.8.9
 RUN mix local.hex --force && \
     mix local.rebar --force
+
+ENV PHOENIX_VERSION 1.1.4
+
+RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez
